@@ -14,3 +14,13 @@ This repository contains a high-fidelity numerical simulator for thin-film optic
 * **NumPy:** Complex linear algebra for matrix concatenation.
 * **SciPy:** Optimization of layer thicknesses.
 * **Matplotlib:** Spectral response visualization.
+
+## Getting Started
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tluca04/Thin-film-sim.git
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
