@@ -2,29 +2,21 @@
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
 
-echo --- STARTING SIMULATOR ---
-echo Current Directory: %cd%
+echo --- OPTICAL SIMULATOR SETUP ---
 
-set "ACTIVATE_PATH="
-
-for %%d in (env venv .venv) do (
-    if exist "%%d\Scripts\activate.bat" set "ACTIVATE_PATH=%%d\Scripts\activate.bat"
-    if exist "%%d\bin\activate.bat" set "ACTIVATE_PATH=%%d\bin\activate.bat"
+if not exist "env\Scripts\activate.bat" (
+    echo [INFO] Virtual environment not found. Creating 'env'...
+    python -m venv env
 )
 
-if "%ACTIVATE_PATH%"=="" (
-    echo [ERROR] Could not find the activation file in 'env', 'venv', or '.venv'.
-    echo Please ensure the virtual environment folder contains a 'Scripts' subfolder.
-    dir env 2>nul
-    pause
-    exit /b
-)
+echo [INFO] Installing required libraries...
+env\Scripts\python.exe -m pip install numpy matplotlib ipywidgets voila refractiveindex ipykernel
 
-echo [OK] Virtual environment found: %ACTIVATE_PATH%
-call "%ACTIVATE_PATH%"
+echo [INFO] Registering Jupyter kernel for Voila...
+env\Scripts\python.exe -m ipykernel install --user --name python3 --display-name "Python 3 (env)"
 
 echo [OK] Starting Voila server...
 start "" "http://localhost:8866"
-voila simulator.ipynb --no-browser --port=8866
+env\Scripts\voila.exe simulator.ipynb --no-browser --port=8866 --show_tracebacks=True
 
 pause
