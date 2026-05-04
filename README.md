@@ -35,3 +35,9 @@ Where $n_0$ is the incident medium and $n_s$ is the substrate index.
 1. Download and extract the repository.
 2. Double-click **`Sim_app.bat`**.
 3. The script will automatically set up a virtual environment, install dependencies, and launch the dashboard in your browser.
+
+### Linux
+1. Open a terminal in the project folder.
+2. Grant execution permissions to the launcher script:
+   ```bash
+   chmod +x Sim_app.sh
