@@ -41,3 +41,7 @@ Where $n_0$ is the incident medium and $n_s$ is the substrate index.
 2. Grant execution permissions to the launcher script:
    ```bash
    chmod +x Sim_app.sh
+3. Run the simulator:
+    ```bash
+    ./Sim_app.sh
+4. The script will automatically create a virtual environment (`env`), install all dependencies from `requirements.txt`, and start the **Voila** dashboard in your default browser.
