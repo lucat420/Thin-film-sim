@@ -1,4 +1,4 @@
-# Optical Interference Filter Simulator - Lab Project
+# Optical Interference Filter Simulator
 
 ## Project Objective
 This project is an interactive numerical simulator for thin-film optical filters. The program calculates the reflectance and transmittance of multi-layer structures using real-world refractive index data. Its primary purpose is to analyze how manufacturing thickness tolerances (deposition errors) impact the final spectral performance of a filter.
